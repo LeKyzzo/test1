@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<h2>Nos destinations phares</h2>
+<div class="row">
+    {% for destination in destinations %}
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="{{ destination.image }}" class="card-img-top" alt="{{ destination.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ destination.name }}</h5>
+                    <p class="card-text">{{ destination.description }}</p>
+                    <a href="/destination/{{ destination.id }}" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

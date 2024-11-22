@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ destination.name }}{% endblock %}
+
+{% block body %}
+<h2>{{ destination.name }}</h2>
+<img src="{{ destination.image }}" alt="{{ destination.name }}" class="img-fluid mb-3">
+<p>{{ destination.description }}</p>
+
+<h3>Activités à faire :</h3>
+<ul>
+    {% for activity in destination.activities %}
+        <li>{{ activity }}</li>
+    {% endfor %}
+</ul>
+<a href="/" class="btn btn-secondary">Retour à l'accueil</a>
+{% endblock %}
